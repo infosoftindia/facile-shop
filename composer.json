@@ -1,0 +1,41 @@
+{
+  "name": "infosoftindia/facile-shop",
+  "type": "project",
+  "description": "A light weight opensource PHP Shopping CMS.",
+  "keywords": [
+    "cart",
+    "opensource",
+    "facile",
+    "infosoftindia",
+    "shopping cart"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Prashant Rijal",
+      "email": "me@prashantrijal.com.np"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    },
+    "classmap": [
+      "./",
+      "database/migrations"
+    ]
+  },
+  "require": {
+    "vlucas/phpdotenv": "^4.1",
+    "infosoftindia/facile": "^1.0.1"
+  },
+  "minimum-stability": "dev",
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php facile key:generate"
+    ]
+  }
+}
